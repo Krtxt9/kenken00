@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+void stoogeSort(int arr[], int i, int j)
+{
+//pag malaki yung array i makikipag swap sya sa array j
+    if (arr[i] > arr[j])
+        swap(arr[i], arr[j]);
+//ito ay ginagamit as a base case para sa recusive calls o pag tawag sa stoogeSort function.
+    if (i + 1 >= j)
+    
+        return;
+ //inaalam nya ang sukat ng subarrays na kailangan ma pag hiwahiwalay
+    int k = (j - i + 1) / 3;
+ //dito, ito yung recusive function na tumatawag sa stoogeSort function.
+    stoogeSort(arr, i, j - k);
+    stoogeSort(arr, i + k, j);
+    stoogeSort(arr, i, j - k);
+}
+
+int main()
+{
+    int arr[] = { -1,5, 4, 3, 2, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    stoogeSort(arr, 0, n - 1);
+ 
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+ 
+    return 0;
+}
+    
