@@ -22,7 +22,7 @@ int main()
 {
     int arr[] = { -1,5, 4, 3, 2, 1 };
     int n = sizeof(arr) / sizeof(arr[0]);
-//ito yung pag tawag ng stoogeSort function para i sort yung array
+//ito yung pag tawag sa stoogeSort function para i sort yung array
   
     stoogeSort(arr, 0, n - 1);
  
